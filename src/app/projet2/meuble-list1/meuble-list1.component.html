@@ -1,0 +1,21 @@
+<h1>
+liste des meubles a vendre  <br>{{dateJour | date:'dd/ MMMM '}}
+</h1>
+
+
+<div>
+<ng-container *ngFor="let x of meubles">
+    <app-meuble1 [msg]="x"></app-meuble1>
+</ng-container>
+</div>
+
+
+
+<select [(ngModel)]="etat">
+        <option value="neuf">neuf</option>
+        <option value="occasion">occasion</option>
+    </select>
+    <ng-container [ngSwitch]="etat">
+<span *ngSwitchCase="'neuf'">2 de meuble(s)neuf</span>
+<span *ngSwitchCase="'occasion'"> 1 de meuble(s)occasion</span>
+</ng-container>

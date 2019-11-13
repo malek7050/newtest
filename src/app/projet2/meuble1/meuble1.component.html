@@ -1,0 +1,15 @@
+
+ <h2>{{msg.libelle}}</h2><br>
+ <img [src]="msg.img" style="width:100px;height:175px" ><br>
+<div [ngClass]="msg.prixttc > 100 ?'aaa':'bbb'"  >
+ <ul >
+     <li> prix {{msg.prixttc}}</li>
+     <li>neuf<input type="checkbox" name="neuf"[disabled]="true" [checked]="msg.neuf">  </li>
+     <li *ngIf="msg.neuf != true">
+             <button (click)="fonc()" > prix original
+                   <p *ngIf="b==true">{{msg.prixttc}}</p> 
+            </button>
+    </li>
+ </ul>    
+ </div>
+ <!-- Fin test -->
